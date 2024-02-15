@@ -1,58 +1,65 @@
 {
-  "data":[
+  "data": [
     {
       "subject_name": "Matematika",
       "level": "medium",
-      "questions" : [
+      "color":"2F3739",
+      "questions": [
         {
-          "questions_text": "1+2 jaboni toping?",
-          "true_answer" : "3",
+          "question_text": "1+2 nechaga teng?",
+          "true_answer": "3",
           "variant_1": "3",
-          "variant_2" :  "2",
-          "variant_3": "5"
+          "variant_2": "2",
+          "variant_3": "5",
+          "variant_4": "6"
         },
         {
-          "questions_text": "1+2 jaboni toping?",
-          "true_answer" : "3",
+          "question_text": "1+2 nechaga teng?",
+          "true_answer": "3",
           "variant_1": "3",
-          "variant_2" :  "2",
-          "variant_3": "5"
+          "variant_2": "2",
+          "variant_3": "5",
+          "variant_4": "6"
         },
         {
-          "questions_text": "1+2 jaboni toping?",
-          "true_answer" : "3",
+          "question_text": "1+2 nechaga teng?",
+          "true_answer": "3",
           "variant_1": "3",
-          "variant_2" :  "2",
-          "variant_3": "5"
-        },
-        {
-          "questions_text": "1+2 jaboni toping?",
-          "true_answer" : "3",
-          "variant_1": "3",
-          "variant_2" :  "2",
-          "variant_3": "5"
-        },
-        {
-          "questions_text": "1+2 jaboni toping?",
-          "true_answer" : "3",
-          "variant_1": "3",
-          "variant_2" :  "2",
-          "variant_3": "5"
+          "variant_2": "2",
+          "variant_3": "5",
+          "variant_4": "6"
         }
       ]
     },
     {
       "subject_name": "English",
       "level": "easy",
-      "questions" : [
+      "color": "2F3739",
+      "questions": [
         {
-          "questions_text": "I ... student.",
-          "true_answer" : "am",
-          "variant_1": "it",
-          "variant_2" :  "is",
-          "variant_3": "am"
+          "question_text": "I ... a student.",
+          "true_answer": "am",
+          "variant_1": "are",
+          "variant_2": "is",
+          "variant_3": "am",
+          "variant_4": "it"
         },
-
+        {
+          "question_text": "I ... a student.",
+          "true_answer": "am",
+          "variant_1": "are",
+          "variant_2": "is",
+          "variant_3": "am",
+          "variant_4": "have"
+        },
+        {
+          "question_text": "I ... a student.",
+          "true_answer": "am",
+          "variant_1": "are",
+          "variant_2": "is",
+          "variant_3": "am",
+          "variant_4": "have"
+        }
       ]
     }
   ]

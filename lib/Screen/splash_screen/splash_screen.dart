@@ -26,8 +26,8 @@ class _SplashScreenState extends State<SplashScreen> {
         return const SubjectScreen();
       }));
     });
-    var d=DataRepository.instance.allSubjects;
-    print("Length:${d.length}");
+
+    print("Length:${DataRepository.instance.allSubjects.length}");
   }
   @override
   Widget build(BuildContext context) {

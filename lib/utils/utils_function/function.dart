@@ -1,4 +1,6 @@
 
+import 'dart:ui';
+
 import '../../models/level_models.dart';
 LevelModel getLevelFromString(String level){
   switch(level){
@@ -13,6 +15,18 @@ LevelModel getLevelFromString(String level){
     default:
     {
       return LevelModel.medium;
+    }
+  }
+}
+
+extension ColorExtension on String {
+  toColor() {
+    var hexColor = replaceAll("#", "");
+    if (hexColor.length == 6) {
+      hexColor = "FF$hexColor";
+    }
+    if (hexColor.length == 8) {
+      return Color(int.parse("0x$hexColor"));
     }
   }
 }

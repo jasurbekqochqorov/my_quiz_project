@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homework12/Screen/splash_screen/splash_screen.dart';
+import 'package:homework12/Screen/widget/subject_item.dart';
 import 'package:homework12/utils/color/color.dart';
 
 import 'Screen/main_screen.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
         );
       },
-      child: const SplashScreen(),
+      child: const SubjectItem(),
     );
   }
 }
