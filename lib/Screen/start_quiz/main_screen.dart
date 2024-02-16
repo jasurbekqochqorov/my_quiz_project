@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:homework12/Screen/global_widget/appBar.dart';
+import 'package:homework12/Screen/start_quiz/widget/buttom_container.dart';
+import 'package:homework12/models/subject_models.dart';
 import 'package:homework12/utils/color/color.dart';
 import 'package:homework12/utils/extension/extension.dart';
 import 'package:homework12/utils/fonts/fonts.dart';
 import 'package:homework12/utils/icons/icon.dart';
 
 class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
-
+  const MainScreen({super.key, required this.subjectModel});
+  final SubjectModel subjectModel;
   @override
   State<MainScreen> createState() => _MainScreenState();
 }
@@ -22,44 +24,12 @@ class _MainScreenState extends State<MainScreen> {
       backgroundColor: AppColors.c_273032,
       body: Column(
         children: [
-          Padding(
-            padding: EdgeInsets.only(left: 32.w, right: 32.w, top: 50.h),
-            child: Row(
-              children: [
-                TextButton(
-                  style: TextButton.styleFrom(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 1.w, vertical: 16.h),
-                      backgroundColor: AppColors.c_162023,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8.r),
-                          side: BorderSide(
-                            width: 1.h,
-                            color: AppColors.c_2F3739,
-                          ))),
-                  onPressed: () {},
-                  child: SvgPicture.asset(
-                    AppImages.arrowBack,
-                    width: 24.w,
-                    height: 24.h,
-                  ),
-                ),
-                SizedBox(
-                  width: 16.getW(),
-                ),
-                Text(
-                  'Start Quiz',
-                  style: AppTextStyle.interMedium
-                      .copyWith(color: AppColors.c_F2F2F2, fontSize: 20.sp),
-                )
-              ],
-            ),
-          ),
+          const GlobalAppBar(title: "Test boshlash",),
           SizedBox(height: 22.getH()),
           Expanded(
             child: Stack(
               children: [
-                Container(
+                Container(height: double.infinity,
                     padding:
                         EdgeInsets.only(left: 32.w, right: 32.w, top: 32.h),
                     decoration: BoxDecoration(
@@ -74,9 +44,10 @@ class _MainScreenState extends State<MainScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Put your understanding of this concept to test by answering a few MCQs.',
+                              "Bir nechta savollarga javob berish orqali o'z bilimingizni sinab ko'ring.",
+                              textAlign: TextAlign.center,
                               style: AppTextStyle.interRegular.copyWith(
-                                  color: AppColors.c_F2F2F2, fontSize: 14.sp),
+                                  color: AppColors.c_F2F2F2, fontSize: 18.sp),
                             ),
                             SizedBox(
                               height: 15.getH(),
@@ -92,7 +63,7 @@ class _MainScreenState extends State<MainScreen> {
                                 children: [
                                   ClipRRect(
                                       borderRadius: BorderRadius.circular(16.r),
-                                      child: Image.asset(AppImages.picture)),
+                                      child:(widget.subjectModel.subjectName=='Matematika')?Image.asset(AppImages.picture):Image.asset(AppImages.picture2)),
                                   SizedBox(
                                     height: 10.getH(),
                                   ),
@@ -102,19 +73,19 @@ class _MainScreenState extends State<MainScreen> {
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'Subject: Maths',
+                                          'Fan:${widget.subjectModel.subjectName}',
                                           style: AppTextStyle.interBold.copyWith(
                                               color: AppColors.c_F2F2F2,
-                                              fontSize: 14.sp),
+                                              fontSize: 16.sp),
                                         ),
                                         SizedBox(
                                           height: 7.getH(),
                                         ),
                                         Text(
-                                          'Chapter: Real Numbers',
+                                          "Qiyinlik darajasi: ${widget.subjectModel.level.name}",
                                           style: AppTextStyle.interBold.copyWith(
                                               color: AppColors.c_F2F2F2,
-                                              fontSize: 14.sp),
+                                              fontSize: 16.sp),
                                         ),
                                         SizedBox(
                                           height: 9.getH(),
@@ -130,85 +101,47 @@ class _MainScreenState extends State<MainScreen> {
                             ),
                             RichText(
                                 text: TextSpan(
-                                    text: 'Total Questions:',
+                                    text: 'Savollar soni: ',
                                     style: AppTextStyle.interRegular.copyWith(
-                                        color: AppColors.c_F2F2F2, fontSize: 14.sp),
+                                        color: AppColors.c_F2F2F2, fontSize: 17.sp),
                                     children: [
                                   TextSpan(
-                                      text: '  05',
+                                      text: ' ${widget.subjectModel.questions.length} ta',
                                       style: AppTextStyle.interBold.copyWith(
                                           color: AppColors.c_F2F2F2,
-                                          fontSize: 14.sp))
+                                          fontSize: 17.sp))
                                 ])),
                             SizedBox(
                               height: 12.getH(),
                             ),
                             RichText(
                                 text: TextSpan(
-                                    text: 'Total Time:',
+                                    text: 'Umumiy vaqt:',
                                     style: AppTextStyle.interRegular.copyWith(
-                                        color: AppColors.c_F2F2F2, fontSize: 14.sp),
+                                        color: AppColors.c_F2F2F2, fontSize: 17.sp),
                                     children: [
                                   TextSpan(
-                                      text: '  15 min',
+                                      text: ' ${widget.subjectModel.questions.length*3} daqiqa',
                                       style: AppTextStyle.interBold.copyWith(
                                           color: AppColors.c_F2F2F2,
-                                          fontSize: 14.sp))
+                                          fontSize: 17.sp))
                                 ])),
                             SizedBox(
                               height: 12.getH(),
                             ),
                             Text(
-                              'Instructions:',
+                              'Yo\'riqnoma :',
                               style: AppTextStyle.interBold.copyWith(
-                                  color: AppColors.c_F2F2F2, fontSize: 14.sp),
+                                  color: AppColors.c_F2F2F2, fontSize: 18.sp),
                             ),
-                            Text('''fajsgjhadjsgshjhjadghajkgadgadgdddddddddddddddfdsafsfasffadshfjgdsjfgasdfgadshaafksdgdddddddddddddddddfadfdfadfgaddhgjkadhgkjThe quizzes consists of questions carefully designed to help you self-assess your comprehension of the information presented on the topics covered in the module.After responding to a question, click on the "Next Question" button at the bottom to go to the next questino. After responding to the 8th question, click on "Close" on the top of the window to exit the quiz.If you select an incorrect response for a question, you can try again until you get the correct response. If you retake the quiz, the questions and their respective responses will be randomized.''',
-                              style: AppTextStyle.interRegular.copyWith(
-                              color: AppColors.c_F2F2F2,fontSize: 14.sp
+                            Text(widget.subjectModel.description,style: AppTextStyle.interRegular.copyWith(
+                              color:AppColors.c_F2F2F2,fontSize: 17.sp
                             ),)
                           ],
                         ),
                       ),
                     )),
-                Positioned(
-                    bottom: 0,
-                    left: 0,right: 0,
-                    child:Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(40.r),
-                  color:AppColors.c_273032
-                  ),
-                  padding: EdgeInsets.symmetric(horizontal: 32.w,vertical: 20.h),
-                  child:Row(children: [
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 14.w,vertical: 12.h),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8.r),
-                        border: Border.all(width: 1.h,color: AppColors.c_F2F2F2)
-                      ),
-                      child: Row(children: [
-                        const Icon(Icons.access_alarm,color: AppColors.c_F2F2F2,),
-                        SizedBox(width: 5.sp,),
-                        Text('15:00',style: AppTextStyle.interMedium.copyWith(
-                          color: AppColors.c_F2F2F2,fontSize:16.sp
-                        ),)
-                      ],),
-                    ),
-                    Spacer(),
-                    TextButton(
-                        style: TextButton.styleFrom(
-                          backgroundColor: AppColors.blue,
-                          padding: EdgeInsets.symmetric(horizontal: 60.w,vertical: 12.h),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.r),
-                          )
-                        ),
-                        onPressed: (){}, child:Text('Start Quiz',style: AppTextStyle.interSemiBold.copyWith(
-                      color: AppColors.c_F2F2F2,fontSize:16.sp
-                    ),))
-                  ],),
-                ))
+                const BottomContainer(),
               ],
             ),
           )

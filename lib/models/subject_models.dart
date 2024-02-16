@@ -10,8 +10,10 @@ class SubjectModel {
   final List<QuizModels> questions;
   final LevelModel level;
   final Color color;
+  final String description;
 
   SubjectModel({
+    required this.description,
     required this.color,
     required this.subjectName,
     required this.questions,
@@ -20,6 +22,7 @@ class SubjectModel {
 
   factory SubjectModel.fromJson(Map<String, dynamic>json){
     return SubjectModel(
+      description: json["description"] as String? ?? "",
       subjectName:json['subject_name'] as String? ?? "",
       level:getLevelFromString(json['level'] as String? ?? "medium"),
       questions:(json['questions'] as List?)?.map((e) =>QuizModels.fromJson(e)).toList() ?? [],

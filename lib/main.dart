@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homework12/Screen/splash_screen/splash_screen.dart';
-import 'package:homework12/Screen/widget/subject_item.dart';
+import 'package:homework12/Screen/subject_screen/subject_screen.dart';
+import 'package:homework12/Screen/subject_screen/widet/subject_item.dart';
 import 'package:homework12/utils/color/color.dart';
 
-import 'Screen/main_screen.dart';
+import 'Screen/start_quiz/main_screen.dart';
 
 void main(){
   runApp(const MyApp());
@@ -21,13 +22,16 @@ class MyApp extends StatelessWidget {
       builder: (context,child){
         return MaterialApp(
           theme: ThemeData(
+            appBarTheme: const AppBarTheme(
+              backgroundColor:AppColors.c_273032,elevation: 0
+            ),
             scaffoldBackgroundColor: AppColors.c_273032
           ),
           home: child,
           debugShowCheckedModeBanner: false,
         );
       },
-      child: const SubjectItem(),
+      child: const SplashScreen(),
     );
   }
 }

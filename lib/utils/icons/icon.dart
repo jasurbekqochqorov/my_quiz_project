@@ -4,6 +4,7 @@ class AppImages{
 
 //png
   static String picture='assets/images/img_2.png';
+  static String picture2='assets/images/img_3.png';
 
 //json
 

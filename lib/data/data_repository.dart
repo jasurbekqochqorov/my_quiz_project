@@ -15,12 +15,12 @@ class DataRepository{
 
   factory DataRepository()=>instance;
 
-  List<SubjectModel> allSubjects=[];
-
-  Future<void> loadSubject () async{
+  List<SubjectModel> allSubject=[];
+   Future<void> loadSubject () async{
     var data=await rootBundle.loadString(AppImages.testData);
     var decodeData=jsonDecode(data);
-    allSubjects=(decodeData["data"] as List?)?.map((e) =>
+     allSubject=(decodeData["data"] as List?)?.map((e) =>
     SubjectModel.fromJson(e)).toList() ?? [];
+
   }
 }

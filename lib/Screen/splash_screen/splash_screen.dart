@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:homework12/Screen/subject_screen/widet/subject_item.dart';
 import 'package:homework12/data/data_repository.dart';
 import 'package:homework12/utils/icons/icon.dart';
 import 'package:lottie/lottie.dart';
@@ -23,11 +24,9 @@ class _SplashScreenState extends State<SplashScreen> {
     DataRepository.instance.loadSubject();
     Future.delayed(const Duration(seconds: 4),(){
       Navigator.push(context,MaterialPageRoute(builder: (context){
-        return const SubjectScreen();
+        return SubjectScreen();
       }));
     });
-
-    print("Length:${DataRepository.instance.allSubjects.length}");
   }
   @override
   Widget build(BuildContext context) {
