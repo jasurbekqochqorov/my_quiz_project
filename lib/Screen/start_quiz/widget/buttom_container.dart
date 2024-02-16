@@ -32,7 +32,7 @@ class _BottomContainerState extends State<BottomContainer> {
                   border: Border.all(width: 1.h,color: AppColors.c_F2F2F2)
               ),
               child: Row(children: [
-                const Icon(Icons.access_alarm,color: AppColors.c_F2F2F2,),
+                const Icon(Icons.access_alarm,color: AppColors.c_F2F2F2,size:40,),
                 SizedBox(width: 5.sp,),
                 Text('15:00',style: AppTextStyle.interMedium.copyWith(
                     color: AppColors.c_F2F2F2,fontSize:16.sp
@@ -42,7 +42,7 @@ class _BottomContainerState extends State<BottomContainer> {
             Spacer(),
             TextButton(
                 style: TextButton.styleFrom(
-                    backgroundColor: AppColors.blue,
+                    backgroundColor:Colors.green,
                     padding: EdgeInsets.symmetric(horizontal: 60.w,vertical: 12.h),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16.r),

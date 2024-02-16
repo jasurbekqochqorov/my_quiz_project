@@ -31,7 +31,7 @@ class _MainScreenState extends State<MainScreen> {
               children: [
                 Container(height: double.infinity,
                     padding:
-                        EdgeInsets.only(left: 32.w, right: 32.w, top: 32.h),
+                        EdgeInsets.only(left: 32.w, right: 32.w, top: 32.h,bottom: 100.h),
                     decoration: BoxDecoration(
                         color: AppColors.c_162023,
                         borderRadius: BorderRadius.only(
@@ -53,10 +53,11 @@ class _MainScreenState extends State<MainScreen> {
                               height: 15.getH(),
                             ),
                             Container(
+                              width: double.infinity,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(16.r),
                                 border:
-                                    Border.all(width: 1, color: AppColors.blue),
+                                    Border.all(width: 2.w, color:Colors.lightBlueAccent),
                               ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,

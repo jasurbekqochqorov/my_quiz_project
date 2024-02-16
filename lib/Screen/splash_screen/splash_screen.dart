@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:homework12/Screen/subject_screen/widet/subject_item.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homework12/data/data_repository.dart';
+import 'package:homework12/utils/color/color.dart';
+import 'package:homework12/utils/fonts/fonts.dart';
 import 'package:homework12/utils/icons/icon.dart';
 import 'package:lottie/lottie.dart';
 
@@ -32,7 +34,15 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body:Center(
-        child:Lottie.asset(AppImages.testAnimation),
+        child:Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+          Text('Loading....',style:AppTextStyle.interSemiBold.copyWith(
+            color:AppColors.white,fontSize: 27.sp
+          ),),
+          SizedBox(height: 10.h,),
+          Lottie.asset(AppImages.testAnimation,width:200.w,height: 200.h)
+        ],),
       )
     );
   }
