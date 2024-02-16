@@ -16,4 +16,5 @@ class AppImages{
 
 //svg
   static String arrowBack='assets/icons/arrow_back.svg';
+  static String watch='assets/icons/watch.svg';
 }

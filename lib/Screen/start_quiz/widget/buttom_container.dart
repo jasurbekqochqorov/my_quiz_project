@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:homework12/Screen/Quiz_screen/quiz_screen.dart';
+import 'package:homework12/utils/icons/icon.dart';
 
 import '../../../utils/color/color.dart';
 import '../../../utils/fonts/fonts.dart';
@@ -32,7 +34,7 @@ class _BottomContainerState extends State<BottomContainer> {
                   border: Border.all(width: 1.h,color: AppColors.c_F2F2F2)
               ),
               child: Row(children: [
-                const Icon(Icons.access_alarm,color: AppColors.c_F2F2F2,size:40,),
+                SvgPicture.asset(AppImages.watch,width: 17.w,height: 20.h,),
                 SizedBox(width: 5.sp,),
                 Text('15:00',style: AppTextStyle.interMedium.copyWith(
                     color: AppColors.c_F2F2F2,fontSize:16.sp
