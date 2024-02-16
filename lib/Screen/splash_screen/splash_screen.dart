@@ -38,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
           Text('Loading....',style:AppTextStyle.interSemiBold.copyWith(
-            color:AppColors.white,fontSize: 27.sp
+            color:AppColors.white,fontSize: 26.sp
           ),),
           SizedBox(height: 10.h,),
           Lottie.asset(AppImages.testAnimation,width:200.w,height: 200.h)
