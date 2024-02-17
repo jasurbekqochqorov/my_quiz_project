@@ -45,12 +45,12 @@ class _BottomContainerState extends State<BottomContainer> {
             TextButton(
                 style: TextButton.styleFrom(
                     backgroundColor:Colors.green,
-                    padding: EdgeInsets.symmetric(horizontal: 60.w,vertical: 12.h),
+                    padding: EdgeInsets.symmetric(horizontal: 40.w,vertical: 12.h),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16.r),
                     )
                 ),
-                onPressed:widget.onTap, child:Text('Start Quiz',style: AppTextStyle.interSemiBold.copyWith(
+                onPressed:widget.onTap, child:Text('Testni boshlash',style: AppTextStyle.interSemiBold.copyWith(
                 color: AppColors.c_F2F2F2,fontSize:16.sp
             ),))
           ],),

@@ -39,6 +39,7 @@ dependencies:
   zoom_tap_animation: ^1.1.0
   flutter_screenutil: ^5.9.0
   lottie: ^3.0.0
+  percent_indicator: ^4.0.0
 
 dev_dependencies:
   flutter_test:

@@ -45,7 +45,7 @@ class _QuizScreenState extends State<QuizScreen> {
           }));
         },),
         SizedBox(height: 32.getH(),),
-        Information(),
+        Information(subjectModel: widget.subjectModel,),
         SizedBox(height: 25.getH(),),
         Expanded(
           child: Container(

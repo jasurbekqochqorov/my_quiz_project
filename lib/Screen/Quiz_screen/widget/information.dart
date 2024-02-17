@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:homework12/models/subject_models.dart';
 import 'package:homework12/utils/extension/extension.dart';
 
 import '../../../utils/color/color.dart';
@@ -9,7 +10,8 @@ import '../../../utils/icons/icon.dart';
 
 
 class Information extends StatefulWidget {
-  const Information({super.key});
+  const Information({super.key, required this.subjectModel});
+  final SubjectModel subjectModel;
 
   @override
   State<Information> createState() => _InformationState();
@@ -21,8 +23,9 @@ class _InformationState extends State<Information> {
     return Padding(
       padding:EdgeInsets.symmetric(horizontal: 32.w),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Pair of Linear Equation in Two Variables ',style: AppTextStyle.interRegular.copyWith(
+          Text('${widget.subjectModel.subjectName} fanidan hamma testlar siz uchun',style: AppTextStyle.interRegular.copyWith(
               color: AppColors.c_F2F2F2,fontSize: 20.sp
           ),),
           SizedBox(height: 7.h,),
