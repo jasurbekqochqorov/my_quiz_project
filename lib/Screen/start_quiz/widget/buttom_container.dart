@@ -8,8 +8,8 @@ import '../../../utils/color/color.dart';
 import '../../../utils/fonts/fonts.dart';
 
 class BottomContainer extends StatefulWidget {
-  const BottomContainer({super.key});
-
+  const BottomContainer({super.key, required this.onTap});
+  final VoidCallback onTap;
   @override
   State<BottomContainer> createState() => _BottomContainerState();
 }
@@ -50,11 +50,7 @@ class _BottomContainerState extends State<BottomContainer> {
                       borderRadius: BorderRadius.circular(16.r),
                     )
                 ),
-                onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context){
-                    return QuizScreen();
-                  }));
-                }, child:Text('Start Quiz',style: AppTextStyle.interSemiBold.copyWith(
+                onPressed:widget.onTap, child:Text('Start Quiz',style: AppTextStyle.interSemiBold.copyWith(
                 color: AppColors.c_F2F2F2,fontSize:16.sp
             ),))
           ],),

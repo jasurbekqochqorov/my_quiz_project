@@ -8,6 +8,8 @@ import 'package:homework12/utils/extension/extension.dart';
 import 'package:homework12/utils/fonts/fonts.dart';
 import 'package:homework12/utils/icons/icon.dart';
 
+import '../Quiz_screen/quiz_screen.dart';
+
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key, required this.subjectModel});
   final SubjectModel subjectModel;
@@ -142,7 +144,13 @@ class _MainScreenState extends State<MainScreen> {
                         ),
                       ),
                     )),
-                const BottomContainer(),
+                BottomContainer(
+                  onTap: (){
+                    Navigator.pushReplacement(context,MaterialPageRoute(builder: (context){
+                      return QuizScreen(subjectModel:widget.subjectModel,);
+                    }));
+                  },
+                ),
               ],
             ),
           )

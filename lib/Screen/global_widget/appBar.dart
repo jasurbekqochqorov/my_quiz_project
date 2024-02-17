@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:homework12/Screen/subject_screen/subject_screen.dart';
 import 'package:homework12/utils/extension/extension.dart';
 
 import '../../utils/color/color.dart';
@@ -8,8 +9,10 @@ import '../../utils/fonts/fonts.dart';
 import '../../utils/icons/icon.dart';
 
 class GlobalAppBar extends StatelessWidget {
-  const GlobalAppBar({super.key, required this.title});
+  const GlobalAppBar({super.key, required this.title, this.isButton=false, this.onTap});
   final String title;
+  final bool? isButton;
+  final VoidCallback? onTap;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -27,7 +30,9 @@ class GlobalAppBar extends StatelessWidget {
                     color: AppColors.c_2F3739,
                   ))),
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.push(context,MaterialPageRoute(builder: (context){
+              return SubjectScreen();
+            }));
           },
           child: SvgPicture.asset(
             AppImages.arrowBack,
@@ -42,7 +47,21 @@ class GlobalAppBar extends StatelessWidget {
           title,
           style: AppTextStyle.interMedium
               .copyWith(color: AppColors.c_F2F2F2, fontSize: 24.sp),
-        )
+        ),
+        Spacer(),
+        (isButton==true)?TextButton(
+            style: TextButton.styleFrom(
+                padding:EdgeInsets.symmetric(horizontal:15.w,vertical: 13.h),
+                backgroundColor: Colors.green,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16.r),
+                  side: BorderSide(width: 2.w,color:Colors.greenAccent),
+                )
+            ),
+            onPressed:onTap,
+            child:Text('Qabul qilish',style: AppTextStyle.interMedium.copyWith(
+                color:AppColors.c_F2F2F2,fontSize: 16.sp
+            ),)):Text('')
       ],),
     );
   }
