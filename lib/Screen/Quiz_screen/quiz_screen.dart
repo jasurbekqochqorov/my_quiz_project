@@ -5,6 +5,8 @@ import 'package:homework12/Screen/Quiz_screen/widget/information.dart';
 import 'package:homework12/Screen/Quiz_screen/widget/questions_button.dart';
 import 'package:homework12/Screen/Result/result_screen.dart';
 import 'package:homework12/Screen/global_widget/appBar.dart';
+import 'package:homework12/Screen/start_quiz/main_screen.dart';
+import 'package:homework12/Screen/subject_screen/subject_screen.dart';
 import 'package:homework12/models/quiz_models.dart';
 import 'package:homework12/models/subject_models.dart';
 import 'package:homework12/utils/color/color.dart';
@@ -42,6 +44,11 @@ class _QuizScreenState extends State<QuizScreen> {
         onTap: (){
           Navigator.pushReplacement(context,MaterialPageRoute(builder: (context){
             return ResultScreen(subjectModel:widget.subjectModel,selectedAnswer: selectedAnswer,);
+          }));
+        },
+        onPressed: (){
+          Navigator.push(context,MaterialPageRoute(builder: (context){
+            return const SubjectScreen();
           }));
         },),
         SizedBox(height: 32.getH(),),

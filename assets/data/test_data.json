@@ -36,7 +36,7 @@
           "variant_1": "Cheksiz",
           "variant_2": "bo’sh",
           "variant_3": "chekli",
-          "variant_4": "aniqlabbo’lmaydi"
+          "variant_4": "aniqlab bo’lmaydi"
         },
         {
           "question_text": "U={x/-5≤x≤5,x∈Z}, A={x/1≤x≤4,x∈Z} bo’lsa, A’ to’plam elementlarini toping.",
@@ -100,7 +100,7 @@
           "variant_1": "p˄¬q",
           "variant_2": "pv¬q",
           "variant_3": " p˅¬q",
-          "variant_4": "p=>q"
+          "variant_4": "p=>¬q"
         },
         {
           "question_text": "p=>q  mulohazaning ….. deb q=>p  mulohazaga aytiladi. Nuqtani to’ldiring:?",
@@ -210,7 +210,7 @@
         {
           "question_text": "Skalyar kattalik nima?",
           "true_answer": "Faqat son qiymati bilan aniqlanadigan kattalik",
-          "variant_1": " Faqat son qiymati bilan aniqlanadigan kattalik",
+          "variant_1": "Faqat son qiymati bilan aniqlanadigan kattalik",
           "variant_2": "Faqat yo'nalishi bilan aniqlanadigan kattalik",
           "variant_3": "Birlikka ega bo'lmagan kattalik",
           "variant_4": "Son qiymati va yo'nalishi bilan aniqlanadigan kattalikka aytiladi"

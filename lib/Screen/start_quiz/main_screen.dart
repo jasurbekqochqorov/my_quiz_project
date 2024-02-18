@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homework12/Screen/global_widget/appBar.dart';
 import 'package:homework12/Screen/start_quiz/widget/buttom_container.dart';
+import 'package:homework12/Screen/subject_screen/subject_screen.dart';
 import 'package:homework12/models/subject_models.dart';
 import 'package:homework12/utils/color/color.dart';
 import 'package:homework12/utils/extension/extension.dart';
@@ -26,7 +27,11 @@ class _MainScreenState extends State<MainScreen> {
       backgroundColor: AppColors.c_273032,
       body: Column(
         children: [
-          const GlobalAppBar(title: "Test boshlash",),
+          GlobalAppBar(title: "Test boshlash",onPressed: (){
+            Navigator.push(context,MaterialPageRoute(builder: (context){
+              return SubjectScreen();
+            }));
+          },),
           SizedBox(height: 22.getH()),
           Expanded(
             child: Stack(

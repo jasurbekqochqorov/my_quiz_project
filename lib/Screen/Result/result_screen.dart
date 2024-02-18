@@ -1,9 +1,11 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homework12/Screen/Result/widget/first_widget.dart';
 import 'package:homework12/Screen/Result/widget/result_container.dart';
 import 'package:homework12/Screen/Result/widget/time_widget.dart';
 import 'package:homework12/Screen/global_widget/appBar.dart';
+import 'package:homework12/Screen/result_list/resulst_list.dart';
 import 'package:homework12/Screen/start_quiz/main_screen.dart';
 import 'package:homework12/models/quiz_models.dart';
 import 'package:homework12/models/subject_models.dart';
@@ -12,6 +14,9 @@ import 'package:homework12/utils/extension/extension.dart';
 import 'package:homework12/utils/fonts/fonts.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
+
+import '../globalList/global_list.dart';
+import '../subject_screen/subject_screen.dart';
 
 
 class ResultScreen extends StatefulWidget {
@@ -33,27 +38,35 @@ class _ResultScreenState extends State<ResultScreen>{
     for(int i=0; i<widget.subjectModel.questions.length; i++){
       QuizModels quiz=widget.subjectModel.questions[i];
       int selection=widget.selectedAnswer[i]!;
+
       switch(selection){
         case 1:{
+          list.add(quiz.variant1);
           if(quiz.trueAnswer==quiz.variant1){
             trueAnswer++;
           }
         }
       case 2:{
+        list.add(quiz.variant2);
       if(quiz.trueAnswer==quiz.variant2){
       trueAnswer++;
       }
       }
       case 3:{
+        list.add(quiz.variant3);
       if(quiz.trueAnswer==quiz.variant3){
       trueAnswer++;
       }
       }
       case 4:{
+        list.add(quiz.variant4);
       if(quiz.trueAnswer==quiz.variant4){
       trueAnswer++;
       }
       }
+        default:{
+          list.add('');
+        }
       }
     }
   }
@@ -62,7 +75,12 @@ class _ResultScreenState extends State<ResultScreen>{
     return Scaffold(
       body: Column(
         children: [
-          const GlobalAppBar(title:'Test Natijasi'),
+          GlobalAppBar(title:'Sizning Natijangiz',
+          onPressed:(){
+            Navigator.push(context,MaterialPageRoute(builder: (context){
+              return const SubjectScreen();
+            }));
+          }),
           SizedBox(height: 22.getH(),),
           Padding(padding:EdgeInsets.symmetric(horizontal: 32.w),
           child: Column(children: [
@@ -104,8 +122,11 @@ class _ResultScreenState extends State<ResultScreen>{
                       color: AppColors.c_F2F2F2.withOpacity(0.75),fontSize: 10.sp
                     ),)
                   ],),
+                  animation: true,
+                  animationDuration:4000,
                   progressColor:Colors.teal,
                   backgroundColor: Colors.teal.withOpacity(0.2),
+
                 ),
                 SizedBox(width: 23.w,),
                 Expanded(
@@ -154,7 +175,12 @@ class _ResultScreenState extends State<ResultScreen>{
             SizedBox(height:30.getH(),),
             ZoomTapAnimation(
                 onTap: (){
-
+                  Navigator.pushReplacement(context,MaterialPageRoute(builder: (context){
+                    return ResultList(
+                      subjectModel:widget.subjectModel,
+                      answers: widget.selectedAnswer,
+                    );
+                  }));
                 },
                 child: FirstWidget(title:'Natijani tekshirish',color: AppColors.c_F2954D.withOpacity(0.5),)),
             SizedBox(height: 15.getH(),),
