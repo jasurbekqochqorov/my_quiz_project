@@ -4,7 +4,7 @@
       "subject_name": "Matematika",
       "level": "medium",
       "color":"0E81B4",
-      "description": "Matemikani biz bilan o'rganing va o'z bilimlaringizni yanada mustahkamlang",
+      "description": "Matemikani biz bilan o'rganing va o'z bilimlaringizni yanada mustahkamlang\nTuzuvchi: Jasurbek Qo'chqorov",
       "questions": [
         {
           "question_text": "To’plam elementlari qanday belgilanadi?",
@@ -170,7 +170,7 @@
     },
     {
       "subject_name": "Fizika",
-      "description": "Fizikani biz bilan o'rganing va o'z bilimlaringizni yanada mustahkamlang",
+      "description": "Fizikani biz bilan o'rganing va o'z bilimlaringizni yanada mustahkamlang\nTuzuvchi: Jasurbek Qo'chqorov",
       "level": "easy",
       "color": "F2954D",
       "questions": [

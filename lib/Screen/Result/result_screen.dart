@@ -186,6 +186,7 @@ class _ResultScreenState extends State<ResultScreen>{
             SizedBox(height: 15.getH(),),
             ZoomTapAnimation(
                 onTap:(){
+                  list=[];
                   Navigator.push(context,MaterialPageRoute(builder: (context){
                     return MainScreen(subjectModel: widget.subjectModel);
                   }));

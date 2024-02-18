@@ -28,7 +28,7 @@ class _QuestionsButtonState extends State<Questions> {
           left: 10.w,top: 13.h,bottom: 13.h,right: 10.w
       ),
       decoration: BoxDecoration(
-      color:(widget.isActive)?(widget.isTrue)?AppColors.c_27AE60:(!widget.isActive && widget.isTrue2)?AppColors.c_27AE60:Colors.red:(widget.isTrue2)?AppColors.c_27AE60:AppColors.c_162023,
+      color:(widget.isActive)?(widget.isTrue)?AppColors.c_27AE60:Colors.red:(widget.isTrue2)?AppColors.blue:AppColors.c_162023,
         borderRadius: BorderRadius.circular(16.r),
       ),
       width: double.infinity,
