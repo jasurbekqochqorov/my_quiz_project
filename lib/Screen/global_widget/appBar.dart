@@ -21,7 +21,7 @@ class GlobalAppBar extends StatelessWidget {
         TextButton(
           style: TextButton.styleFrom(
               padding: EdgeInsets.symmetric(
-                  horizontal: 16.w, vertical: 14.h),
+                  horizontal: 8.w, vertical: 12.h),
               backgroundColor: AppColors.c_162023,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8.r),
@@ -47,7 +47,7 @@ class GlobalAppBar extends StatelessWidget {
         Spacer(),
         (isButton==true)?TextButton(
             style: TextButton.styleFrom(
-                padding:EdgeInsets.symmetric(horizontal:15.w,vertical: 13.h),
+                padding:EdgeInsets.symmetric(horizontal:10.w,vertical: 13.h),
                 backgroundColor: Colors.green,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16.r),
@@ -55,7 +55,7 @@ class GlobalAppBar extends StatelessWidget {
                 )
             ),
             onPressed:onTap,
-            child:Text('Qabul qilish',style: AppTextStyle.interMedium.copyWith(
+            child:Text('Testni yakunlash',style: AppTextStyle.interMedium.copyWith(
                 color:AppColors.c_F2F2F2,fontSize: 16.sp
             ),)):Text('')
       ],),

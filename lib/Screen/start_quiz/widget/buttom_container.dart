@@ -3,13 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:homework12/Screen/Quiz_screen/quiz_screen.dart';
 import 'package:homework12/utils/icons/icon.dart';
+import 'package:homework12/utils/utils_function/function.dart';
 
 import '../../../utils/color/color.dart';
 import '../../../utils/fonts/fonts.dart';
 
 class BottomContainer extends StatefulWidget {
-  const BottomContainer({super.key, required this.onTap});
+  const BottomContainer({super.key, required this.onTap, required this.k});
   final VoidCallback onTap;
+  final int k;
   @override
   State<BottomContainer> createState() => _BottomContainerState();
 }
@@ -36,7 +38,7 @@ class _BottomContainerState extends State<BottomContainer> {
               child: Row(children: [
                 SvgPicture.asset(AppImages.watch,width: 17.w,height: 20.h,),
                 SizedBox(width: 5.sp,),
-                Text('15:00',style: AppTextStyle.interMedium.copyWith(
+                Text('${getMinutelyText(widget.k)}',style: AppTextStyle.interMedium.copyWith(
                     color: AppColors.c_F2F2F2,fontSize:16.sp
                 ),)
               ],),

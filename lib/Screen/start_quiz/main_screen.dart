@@ -8,6 +8,7 @@ import 'package:homework12/utils/color/color.dart';
 import 'package:homework12/utils/extension/extension.dart';
 import 'package:homework12/utils/fonts/fonts.dart';
 import 'package:homework12/utils/icons/icon.dart';
+import 'package:homework12/utils/utils_function/function.dart';
 
 import '../Quiz_screen/quiz_screen.dart';
 
@@ -129,7 +130,7 @@ class _MainScreenState extends State<MainScreen> {
                                         color: AppColors.c_F2F2F2, fontSize: 17.sp),
                                     children: [
                                   TextSpan(
-                                      text: ' ${widget.subjectModel.questions.length*3} daqiqa',
+                                      text: ' ${getMinutelyText(widget.subjectModel.questions.length*120)}',
                                       style: AppTextStyle.interBold.copyWith(
                                           color: AppColors.c_F2F2F2,
                                           fontSize: 17.sp))
@@ -150,6 +151,7 @@ class _MainScreenState extends State<MainScreen> {
                       ),
                     )),
                 BottomContainer(
+                  k: widget.subjectModel.questions.length*120,
                   onTap: (){
                     Navigator.pushReplacement(context,MaterialPageRoute(builder: (context){
                       return QuizScreen(subjectModel:widget.subjectModel,);

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homework12/Screen/start_quiz/main_screen.dart';
 import 'package:homework12/Screen/subject_screen/widet/subject_item.dart';
@@ -22,32 +23,37 @@ class _SubjectScreenState extends State<SubjectScreen> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Padding(padding:EdgeInsets.only(top: 50.h),child: Center(
-            child:Text('Fanlar',style: AppTextStyle.interSemiBold.copyWith(
-              color: AppColors.c_F2F2F2,fontSize: 28.sp
-            ),),),),
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-              child:ListView(
-                children: [
-                  ...List.generate(DataRepository.instance.allSubject.length, (index) {
-                    SubjectModel subjectModel = DataRepository.instance.allSubject[index];
-                    return SubjectItem(
-                        time: '14:00', subjectModel: subjectModel, onTap: () {
-                          Navigator.pushReplacement(context,MaterialPageRoute(builder: (context){
-                            return MainScreen(subjectModel: subjectModel,);
-                          }));
-                    });
-                  })
-                ],
+    return AnnotatedRegion(
+      value: const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent
+      ),
+      child: Scaffold(
+        body: Column(
+          children: [
+            Padding(padding:EdgeInsets.only(top: 50.h),child: Center(
+              child:Text('Fanlar',style: AppTextStyle.interSemiBold.copyWith(
+                color: AppColors.c_F2F2F2,fontSize: 28.sp
+              ),),),),
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+                child:ListView(
+                  children: [
+                    ...List.generate(DataRepository.instance.allSubject.length, (index) {
+                      SubjectModel subjectModel = DataRepository.instance.allSubject[index];
+                      return SubjectItem(
+                          time: '14:00', subjectModel: subjectModel, onTap: () {
+                            Navigator.pushReplacement(context,MaterialPageRoute(builder: (context){
+                              return MainScreen(subjectModel: subjectModel,);
+                            }));
+                      });
+                    })
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

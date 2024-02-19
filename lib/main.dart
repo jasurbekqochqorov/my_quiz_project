@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homework12/Screen/splash_screen/splash_screen.dart';
 import 'package:homework12/Screen/subject_screen/subject_screen.dart';
@@ -22,7 +23,10 @@ class MyApp extends StatelessWidget {
       builder: (context,child){
         return MaterialApp(
           theme: ThemeData(
-            appBarTheme: const AppBarTheme(
+            appBarTheme: AppBarTheme(
+              systemOverlayStyle:SystemUiOverlayStyle(
+                statusBarColor:AppColors.c_273032
+              ),
               backgroundColor:AppColors.c_273032,elevation: 0
             ),
             scaffoldBackgroundColor: AppColors.c_273032

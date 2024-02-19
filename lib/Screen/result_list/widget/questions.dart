@@ -40,7 +40,7 @@ class _QuestionsButtonState extends State<Questions> {
               ),),
               Expanded(
                 child: Text(widget.variant,style: AppTextStyle.interRegular.copyWith(
-                    color: AppColors.c_F2F2F2,fontSize:14.sp
+                    color: AppColors.c_F2F2F2,fontSize:16.sp
                 ),),
               ),
             ],

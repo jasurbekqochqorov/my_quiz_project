@@ -29,7 +29,7 @@ class TimeWidget extends StatelessWidget {
             color: AppColors.c_F2F2F2,fontSize: 16.sp
           ),),
           Text(title,style: AppTextStyle.interMedium.copyWith(
-            color: AppColors.c_F2F2F2,fontSize: 12.sp
+            color: AppColors.c_F2F2F2,fontSize: 14.sp
           ),)
         ],),
     );

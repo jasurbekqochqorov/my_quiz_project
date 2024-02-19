@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homework12/data/data_repository.dart';
 import 'package:homework12/utils/color/color.dart';
@@ -32,18 +33,23 @@ class _SplashScreenState extends State<SplashScreen> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body:Center(
-        child:Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-          Text('Loading....',style:AppTextStyle.interSemiBold.copyWith(
-            color:AppColors.white,fontSize: 26.sp
-          ),),
-          SizedBox(height: 10.h,),
-          Lottie.asset(AppImages.testAnimation,width:200.w,height: 200.h)
-        ],),
-      )
+    return AnnotatedRegion(
+      value: const SystemUiOverlayStyle(
+        statusBarColor:Colors.transparent,
+      ),
+      child: Scaffold(
+        body:Center(
+          child:Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+            Text('Loading....',style:AppTextStyle.interSemiBold.copyWith(
+              color:AppColors.white,fontSize: 26.sp
+            ),),
+            SizedBox(height: 10.h,),
+            Lottie.asset(AppImages.testAnimation,width:200.w,height: 200.h)
+          ],),
+        )
+      ),
     );
   }
 }

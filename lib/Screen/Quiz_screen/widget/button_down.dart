@@ -26,7 +26,7 @@ class ButtonDown extends StatelessWidget {
               )
           ),
           onPressed:onPrevious,
-          child: Text('Previous',style: AppTextStyle.interSemiBold.copyWith(
+          child: Text('Oldingisi',style: AppTextStyle.interSemiBold.copyWith(
               color: AppColors.c_F2F2F2,fontSize: 16.sp
           ),),
         ),
@@ -43,7 +43,7 @@ class ButtonDown extends StatelessWidget {
               )
           ),
           onPressed:onNext,
-          child: Text('Next',style: AppTextStyle.interSemiBold.copyWith(
+          child: Text('Keyingisi',style: AppTextStyle.interSemiBold.copyWith(
               color: AppColors.c_F2F2F2,fontSize: 16.sp
           ),),
         ),
