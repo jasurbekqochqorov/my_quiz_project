@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:homework12/Screen/register/resgister_screen.dart';
 import 'package:homework12/data/data_repository.dart';
+import 'package:homework12/data/local/storage_repository.dart';
+import 'package:homework12/tabBox/tab_box.dart';
 import 'package:homework12/utils/color/color.dart';
 import 'package:homework12/utils/fonts/fonts.dart';
 import 'package:homework12/utils/icons/icon.dart';
 import 'package:lottie/lottie.dart';
-
-import '../subject_screen/subject_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -26,9 +27,16 @@ class _SplashScreenState extends State<SplashScreen> {
   _init()async{
     DataRepository.instance.loadSubject();
     Future.delayed(const Duration(seconds: 4),(){
-      Navigator.pushReplacement(context,MaterialPageRoute(builder: (context){
-        return const SubjectScreen();
-      }));
+      if(StorageRepository.getString(key: 'name').isNotEmpty){
+        Navigator.pushReplacement(context,MaterialPageRoute(builder: (context){
+          return const TabBox();
+        }));
+      }
+      else{
+        Navigator.pushReplacement(context,MaterialPageRoute(builder: (context){
+          return const RegisterScreen();
+        }));
+      }
     });
   }
   @override

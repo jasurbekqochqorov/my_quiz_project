@@ -7,7 +7,6 @@ class AnswerReport {
   final Map<int, int> selectedAnswer;
 
   final SubjectModel subjectModel;
-
   final int spentTime;
 
   int trueAnswer = 0;

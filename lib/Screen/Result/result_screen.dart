@@ -17,6 +17,7 @@ import 'package:homework12/utils/fonts/fonts.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
+import '../../tabBox/tab_box.dart';
 import '../globalList/global_list.dart';
 import '../subject_screen/subject_screen.dart';
 
@@ -45,7 +46,7 @@ class _ResultScreenState extends State<ResultScreen>{
             GlobalAppBar(title:'Sizning Natijangiz',
             onPressed:(){
               Navigator.push(context,MaterialPageRoute(builder: (context){
-                return const SubjectScreen();
+                return const TabBox();
               }));
             }),
             SizedBox(height: 22.getH(),),

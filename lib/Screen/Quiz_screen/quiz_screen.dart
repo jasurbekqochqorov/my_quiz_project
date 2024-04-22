@@ -15,6 +15,8 @@ import 'package:homework12/utils/extension/extension.dart';
 import 'package:homework12/utils/fonts/fonts.dart';
 import 'package:homework12/utils/utils_function/function.dart';
 
+import '../../tabBox/tab_box.dart';
+
 class QuizScreen extends StatefulWidget {
   const QuizScreen({super.key, required this.subjectModel});
 
@@ -73,7 +75,7 @@ class _QuizScreenState extends State<QuizScreen> {
               },
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const SubjectScreen();
+                  return const TabBox();
                 }));
               },
             ),

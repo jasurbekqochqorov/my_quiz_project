@@ -7,8 +7,11 @@ import 'package:homework12/Screen/subject_screen/widet/subject_item.dart';
 import 'package:homework12/utils/color/color.dart';
 
 import 'Screen/start_quiz/main_screen.dart';
+import 'data/local/storage_repository.dart';
 
-void main(){
+void main()async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await StorageRepository.init();
   runApp(const MyApp());
 }
 
@@ -23,11 +26,12 @@ class MyApp extends StatelessWidget {
       builder: (context,child){
         return MaterialApp(
           theme: ThemeData(
-            appBarTheme: AppBarTheme(
+            appBarTheme: const AppBarTheme(
               systemOverlayStyle:SystemUiOverlayStyle(
                 statusBarColor:AppColors.c_273032
               ),
-              backgroundColor:AppColors.c_273032,elevation: 0
+              backgroundColor:AppColors.c_273032,
+                elevation: 0
             ),
             scaffoldBackgroundColor: AppColors.c_273032
           ),

@@ -10,6 +10,7 @@ import 'package:homework12/utils/fonts/fonts.dart';
 import 'package:homework12/utils/icons/icon.dart';
 import 'package:homework12/utils/utils_function/function.dart';
 
+import '../../tabBox/tab_box.dart';
 import '../Quiz_screen/quiz_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -30,7 +31,7 @@ class _MainScreenState extends State<MainScreen> {
         children: [
           GlobalAppBar(title: "Test boshlash",onPressed: (){
             Navigator.push(context,MaterialPageRoute(builder: (context){
-              return SubjectScreen();
+              return const TabBox();
             }));
           },),
           SizedBox(height: 22.getH()),
