@@ -35,21 +35,19 @@ class _SubjectScreenState extends State<SubjectScreen> {
                 color: AppColors.c_F2F2F2,fontSize: 28.sp
               ),),),),
             Expanded(
-              child: Padding(
+              child: ListView(
                 padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-                child:ListView(
-                  children: [
-                    ...List.generate(DataRepository.instance.allSubject.length, (index) {
-                      SubjectModel subjectModel = DataRepository.instance.allSubject[index];
-                      return SubjectItem(
-                          time: '14:00', subjectModel: subjectModel, onTap: () {
-                            Navigator.pushReplacement(context,MaterialPageRoute(builder: (context){
-                              return MainScreen(subjectModel: subjectModel,);
-                            }));
-                      });
-                    })
-                  ],
-                ),
+                children: [
+                  ...List.generate(DataRepository.instance.allSubject.length, (index) {
+                    SubjectModel subjectModel = DataRepository.instance.allSubject[index];
+                    return SubjectItem(
+                        time: '14:00', subjectModel: subjectModel, onTap: () {
+                          Navigator.pushReplacement(context,MaterialPageRoute(builder: (context){
+                            return MainScreen(subjectModel: subjectModel,);
+                          }));
+                    });
+                  })
+                ],
               ),
             ),
           ],

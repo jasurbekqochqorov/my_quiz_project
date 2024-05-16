@@ -4,9 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homework12/Screen/Quiz_screen/widget/button_down.dart';
 import 'package:homework12/Screen/Quiz_screen/widget/information.dart';
 import 'package:homework12/Screen/Quiz_screen/widget/questions_button.dart';
-import 'package:homework12/Screen/Result/result_screen.dart';
 import 'package:homework12/Screen/global_widget/appBar.dart';
-import 'package:homework12/Screen/subject_screen/subject_screen.dart';
 import 'package:homework12/data/question_logic.dart';
 import 'package:homework12/models/quiz_models.dart';
 import 'package:homework12/models/subject_models.dart';
@@ -16,6 +14,7 @@ import 'package:homework12/utils/fonts/fonts.dart';
 import 'package:homework12/utils/utils_function/function.dart';
 
 import '../../tabBox/tab_box.dart';
+import '../Result/result_screen.dart';
 
 class QuizScreen extends StatefulWidget {
   const QuizScreen({super.key, required this.subjectModel});

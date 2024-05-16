@@ -1,7 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:homework12/data/local/storage_repository.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:homework12/Screen/auth/singIn/auth_screen.dart';
 import 'package:homework12/utils/color/color.dart';
 import 'package:homework12/utils/fonts/fonts.dart';
+
+import '../../bloc/auth/auth_bloc.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -27,17 +32,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
             const SizedBox(height: 24,),
             const Icon(Icons.account_circle_rounded,color: AppColors.white,size: 100,),
             const SizedBox(height: 10,),
-            Text('Name:${StorageRepository.getString(key: 'name')}',style: AppTextStyle.interMedium.copyWith(
+            Text('Name:${FirebaseAuth.instance.currentUser!.email!.split("@")[0] ?? ""}',style: AppTextStyle.interMedium.copyWith(
               color: AppColors.white,fontSize:24
             ),),
             const SizedBox(height: 10,),
-            Text('Age:${StorageRepository.getString(key: 'age')}',style: AppTextStyle.interMedium.copyWith(
+            Text('email:${FirebaseAuth.instance.currentUser!.email?? ""}',style: AppTextStyle.interMedium.copyWith(
                 color: AppColors.white,fontSize:24
             ),),
-            const SizedBox(height:16,),
-            Text('email:${StorageRepository.getString(key: 'email')}',style: AppTextStyle.interMedium.copyWith(
-                color: AppColors.white,fontSize:24
-            ),),
+            SizedBox(height: 16.h,),
+            TextButton(onPressed: (){
+              context.read<AuthBloc>().add(LogOutUserEvent());
+              Navigator.push(context, MaterialPageRoute(builder: (context){
+                return const AuthScreen();
+              }));
+            }, child:Text("Log out",style: AppTextStyle.interMedium.copyWith(
+              color:Colors.red,fontSize: 16.sp
+            ),))
         ],),
       ),
     );

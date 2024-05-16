@@ -5,6 +5,12 @@ class AppImages{
 //png
   static String picture='assets/images/img_2.png';
   static String picture2='assets/images/img_3.png';
+  static const String top= "assets/images/top.png";
+  static const String google= "assets/images/google.png";
+  static const String math= "assets/images/math.png";
+  static const String physics= "assets/images/img_4.png";
+  static const String math1= "assets/images/img_5.png";
+
 
 //json
 

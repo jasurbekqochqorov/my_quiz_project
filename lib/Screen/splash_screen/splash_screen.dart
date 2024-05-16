@@ -1,7 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homework12/Screen/register/resgister_screen.dart';
+import 'package:homework12/Screen/auth/singIn/auth_screen.dart';
 import 'package:homework12/data/data_repository.dart';
 import 'package:homework12/data/local/storage_repository.dart';
 import 'package:homework12/tabBox/tab_box.dart';
@@ -23,20 +24,22 @@ class _SplashScreenState extends State<SplashScreen> {
     _init();
     super.initState();
   }
-
   _init()async{
     DataRepository.instance.loadSubject();
     Future.delayed(const Duration(seconds: 4),(){
-      if(StorageRepository.getString(key: 'name').isNotEmpty){
-        Navigator.pushReplacement(context,MaterialPageRoute(builder: (context){
-          return const TabBox();
-        }));
-      }
-      else{
-        Navigator.pushReplacement(context,MaterialPageRoute(builder: (context){
-          return const RegisterScreen();
-        }));
-      }
+      User? user = FirebaseAuth.instance.currentUser;
+      Future.microtask(() {
+        if (user != null) {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return const TabBox();
+          }));
+        }
+        else{
+          Navigator.pushReplacement(context,MaterialPageRoute(builder: (context){
+            return const AuthScreen();
+          }));
+        }
+      });
     });
   }
   @override
